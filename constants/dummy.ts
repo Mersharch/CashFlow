@@ -1,0 +1,75 @@
+export const Categories = [
+  "All",
+  "Food",
+  "Transport",
+  "Housing",
+  "Entertainment",
+  "Utilities",
+];
+
+export const Expenses = [
+  { id: 1, name: "Grocery", category: "Food", amount: 100, date: "2022-01-01" },
+  {
+    id: 2,
+    name: "Rent",
+    category: "Housing",
+    amount: 1500,
+    date: "2022-01-05",
+  },
+  {
+    id: 3,
+    name: "Movie Night",
+    category: "Entertainment",
+    amount: 50,
+    date: "2022-01-10",
+  },
+  {
+    id: 4,
+    name: "Gasoline",
+    category: "Transport",
+    amount: 30,
+    date: "2022-01-12",
+  },
+  {
+    id: 5,
+    name: "Electricity Bill",
+    category: "Utilities",
+    amount: 120,
+    date: "2022-01-15",
+  },
+  {
+    id: 6,
+    name: "Dinner Out",
+    category: "Food",
+    amount: 75,
+    date: "2022-01-17",
+  },
+  {
+    id: 7,
+    name: "Internet Bill",
+    category: "Utilities",
+    amount: 60,
+    date: "2022-01-20",
+  },
+  {
+    id: 8,
+    name: "Car Maintenance",
+    category: "Transport",
+    amount: 200,
+    date: "2022-01-22",
+  },
+  {
+    id: 9,
+    name: "Concert Tickets",
+    category: "Entertainment",
+    amount: 100,
+    date: "2022-01-25",
+  },
+  {
+    id: 10,
+    name: "Water Bill",
+    category: "Utilities",
+    amount: 40,
+    date: "2022-01-28",
+  },
+];
