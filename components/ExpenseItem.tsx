@@ -1,10 +1,11 @@
+import { Expense } from "@/state/store";
 import { getScreenPercent } from "@/utils/responsiveness";
 import { Ionicons } from "@expo/vector-icons";
 import { memo } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 interface ExpenseItemProps {
-  item: any;
+  item: Expense;
   theme: any;
 }
 
@@ -23,7 +24,7 @@ const ExpenseItem = memo(({ item, theme }: ExpenseItemProps) => (
         <Text style={[styles.itemTitle, { color: theme.text }]}>
           {item.name}
         </Text>
-        <Text style={[styles.itemSubtitle, { color: theme.tint }]}>
+        <Text style={[styles.itemSubtitle, { color: theme.tabIconDefault }]}>
           {item.category}
         </Text>
       </View>
@@ -32,8 +33,8 @@ const ExpenseItem = memo(({ item, theme }: ExpenseItemProps) => (
       <Text style={[styles.itemTitle, { color: theme.text }]}>
         - ${item.amount.toLocaleString()}
       </Text>
-      <Text style={[styles.itemSubtitle, { color: theme.tint }]}>
-        {item.date}
+      <Text style={[styles.itemSubtitle, { color: theme.tabIconDefault }]}>
+        {item.date.toLocaleString()}
       </Text>
     </View>
   </View>

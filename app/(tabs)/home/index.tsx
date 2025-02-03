@@ -1,9 +1,15 @@
+import AddExpenseModal from "@/components/AddExpenseModal";
 import ExpenseItem from "@/components/ExpenseItem";
-import { Categories, Expenses } from "@/constants/dummy";
+import { Expenses } from "@/constants/dummy";
 import { useTheme } from "@/context/ThemeContext";
-import { getScreenPercent, getScreenWidth } from "@/utils/responsiveness";
+import useStore from "@/state/store";
+import {
+  getScreenHeight,
+  getScreenPercent,
+  getScreenWidth,
+} from "@/utils/responsiveness";
 import { Ionicons } from "@expo/vector-icons";
-import React from "react";
+import React, { FC, useState } from "react";
 import {
   FlatList,
   Pressable,
@@ -15,11 +21,33 @@ import {
 } from "react-native";
 import { FAB } from "react-native-paper";
 
+const ListEmpty: FC<any> = ({ theme }) => {
+  return (
+    <View
+      style={{
+        height: getScreenHeight(400),
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Text
+        style={{ fontSize: getScreenPercent(24), color: theme?.tabIconDefault }}
+      >
+        Click on the + to add an Expense
+      </Text>
+    </View>
+  );
+};
+
 const HomePage = () => {
   const theme = useTheme();
+  const { categories, expenses } = useStore((state) => state);
+  const [showAddModal, setShowAddModal] = useState(false);
+
   const renderExpenseItem = ({ item }: any) => (
     <ExpenseItem item={item} theme={theme} />
   );
+
   return (
     <View style={{ flex: 1 }}>
       <ScrollView
@@ -65,7 +93,7 @@ const HomePage = () => {
             style={styles.categoriesContainer}
             showsHorizontalScrollIndicator={false}
           >
-            {Categories.map((category, index) => (
+            {categories.map((category, index) => (
               <Pressable
                 key={index}
                 style={[
@@ -115,17 +143,22 @@ const HomePage = () => {
           ]}
         >
           <FlatList
-            data={Expenses}
+            data={expenses}
             renderItem={renderExpenseItem}
             showsVerticalScrollIndicator={false}
             scrollEnabled={false}
+            ListEmptyComponent={<ListEmpty theme={theme} />}
           />
         </View>
       </ScrollView>
       <FAB
         icon="plus"
         style={[styles.fab, { backgroundColor: theme.tabIconSelected }]}
-        onPress={() => console.log("Pressed")}
+        onPress={() => setShowAddModal(true)}
+      />
+      <AddExpenseModal
+        isVisible={showAddModal}
+        onClose={() => setShowAddModal(false)}
       />
     </View>
   );
@@ -190,6 +223,7 @@ const styles = StyleSheet.create({
 
   listContainer: {
     flex: 1,
+    height: getScreenHeight(422),
     borderTopRightRadius: getScreenPercent(50),
     borderTopLeftRadius: getScreenPercent(50),
     borderTopWidth: 0.15,

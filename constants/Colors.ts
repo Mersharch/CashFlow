@@ -14,10 +14,10 @@ export const Colors = {
     text: black,
     background: gray,
     altBackground: "#ffffff",
-    tint: "#2596be",
+    tint: blue,
     icon: "#687076",
     tabIconDefault: "#687076",
-    tabIconSelected: "#2596be",
+    tabIconSelected: blue,
   },
   dark: {
     text: "#ffffff",
