@@ -198,15 +198,15 @@ npx expo start
   
   
 
-!["image1"]("./assets/images/IMG_1181.PNG)
+!["image1"]("/assets/images/IMG_1181.PNG)
 
-!["image2"]("./assets/images/IMG_1182.PNG)
+!["image2"]("/assets/images/IMG_1182.PNG)
 
-!["image3"]("./assets/images/IMG_1183.PNG)
+!["image3"]("/assets/images/IMG_1183.PNG)
 
-!["image4"]("./assets/images/IMG_1184.PNG)
+!["image4"]("/assets/images/IMG_1184.PNG)
 
-!["image5"]("./assets/images/IMG_1185.PNG)
+!["image5"]("/assets/images/IMG_1185.PNG)
 
 !["image6"]("./assets/images/IMG_1186.PNG)
 
