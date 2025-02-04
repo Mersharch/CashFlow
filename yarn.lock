@@ -1168,18 +1168,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@callstack/react-theme-provider@npm:^3.0.9":
-  version: 3.0.9
-  resolution: "@callstack/react-theme-provider@npm:3.0.9"
-  dependencies:
-    deepmerge: ^3.2.0
-    hoist-non-react-statics: ^3.3.0
-  peerDependencies:
-    react: ">=16.3.0"
-  checksum: f888ef0b8f993d393a9d49864f75b04b5cf7259e72f290ec570fc5e314315f75c979b03b391243a72578ab55db4ffcdd4dc9dc1a2f8ec2b516cabb958971a85e
-  languageName: node
-  linkType: hard
-
 "@egjs/hammerjs@npm:^2.0.17":
   version: 2.0.17
   resolution: "@egjs/hammerjs@npm:2.0.17"
@@ -3482,8 +3470,7 @@ __metadata:
     "@types/react-test-renderer": ^18.3.0
     expo: ~52.0.28
     expo-font: ~13.0.3
-    expo-linear-gradient: ^14.0.2
-    expo-linking: ~7.0.5
+    expo-linking: ^7.0.5
     expo-router: ~4.0.17
     expo-splash-screen: ~0.29.21
     jest: ^29.2.1
@@ -3492,14 +3479,14 @@ __metadata:
     react-native: 0.76.6
     react-native-dropdown-select-list: ^2.0.5
     react-native-gesture-handler: ~2.20.2
-    react-native-gifted-charts: ^1.4.56
-    react-native-paper: ^5.13.1
+    react-native-pie-chart: ^4.0.0
     react-native-reanimated: ^3.16.7
     react-native-safe-area-context: ^5.1.0
     react-native-screens: ~4.4.0
     react-native-svg: ^15.11.1
     react-test-renderer: 18.3.1
     typescript: ^5.3.3
+    use-count-up: ^3.0.1
     zustand: ^5.0.3
   languageName: unknown
   linkType: soft
@@ -3692,7 +3679,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-convert@npm:^1.9.0, color-convert@npm:^1.9.3":
+"color-convert@npm:^1.9.0":
   version: 1.9.3
   resolution: "color-convert@npm:1.9.3"
   dependencies:
@@ -3724,23 +3711,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-string@npm:^1.6.0, color-string@npm:^1.9.0":
+"color-string@npm:^1.9.0":
   version: 1.9.1
   resolution: "color-string@npm:1.9.1"
   dependencies:
     color-name: ^1.0.0
     simple-swizzle: ^0.2.2
   checksum: c13fe7cff7885f603f49105827d621ce87f4571d78ba28ef4a3f1a104304748f620615e6bf065ecd2145d0d9dad83a3553f52bb25ede7239d18e9f81622f1cc5
-  languageName: node
-  linkType: hard
-
-"color@npm:^3.1.2":
-  version: 3.2.1
-  resolution: "color@npm:3.2.1"
-  dependencies:
-    color-convert: ^1.9.3
-    color-string: ^1.6.0
-  checksum: f81220e8b774d35865c2561be921f5652117638dcda7ca4029262046e37fc2444ac7bbfdd110cf1fd9c074a4ee5eda8f85944ffbdda26186b602dd9bb05f6400
   languageName: node
   linkType: hard
 
@@ -4021,6 +3998,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"d3-path@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "d3-path@npm:3.1.0"
+  checksum: 2306f1bd9191e1eac895ec13e3064f732a85f243d6e627d242a313f9777756838a2215ea11562f0c7630c7c3b16a19ec1fe0948b1c82f3317fac55882f6ee5d8
+  languageName: node
+  linkType: hard
+
+"d3-shape@npm:3.2.0":
+  version: 3.2.0
+  resolution: "d3-shape@npm:3.2.0"
+  dependencies:
+    d3-path: ^3.1.0
+  checksum: de2af5fc9a93036a7b68581ca0bfc4aca2d5a328aa7ba7064c11aedd44d24f310c20c40157cb654359d4c15c3ef369f95ee53d71221017276e34172c7b719cfa
+  languageName: node
+  linkType: hard
+
 "data-uri-to-buffer@npm:^3.0.1":
   version: 3.0.1
   resolution: "data-uri-to-buffer@npm:3.0.1"
@@ -4099,13 +4092,6 @@ __metadata:
   version: 0.6.0
   resolution: "deep-extend@npm:0.6.0"
   checksum: 7be7e5a8d468d6b10e6a67c3de828f55001b6eb515d014f7aeb9066ce36bd5717161eb47d6a0f7bed8a9083935b465bc163ee2581c8b128d29bf61092fdf57a7
-  languageName: node
-  linkType: hard
-
-"deepmerge@npm:^3.2.0":
-  version: 3.3.0
-  resolution: "deepmerge@npm:3.3.0"
-  checksum: 4322195389e0170a0443c07b36add19b90249802c4b47b96265fdc5f5d8beddf491d5e50cbc5bfd65f85ccf76598173083863c202f5463b3b667aca8be75d5ac
   languageName: node
   linkType: hard
 
@@ -4659,18 +4645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"expo-linear-gradient@npm:^14.0.2":
-  version: 14.0.2
-  resolution: "expo-linear-gradient@npm:14.0.2"
-  peerDependencies:
-    expo: "*"
-    react: "*"
-    react-native: "*"
-  checksum: 3f318f50fae44b1f2f90becf421a1c7c0c2822e0a381031fa6d893899173b7ecc6f0c4eddde699e6825fd091d5576cf5960ba81046aeaf0300f44de1147bb543
-  languageName: node
-  linkType: hard
-
-"expo-linking@npm:~7.0.5":
+"expo-linking@npm:^7.0.5":
   version: 7.0.5
   resolution: "expo-linking@npm:7.0.5"
   dependencies:
@@ -5204,16 +5179,6 @@ __metadata:
   version: 1.0.0
   resolution: "getenv@npm:1.0.0"
   checksum: 19ae5cad603a1cf1bcb8fa3bed48e00d062eb0572a4404c02334b67f3b3499f238383082b064bb42515e9e25c2b08aef1a3e3d2b6852347721aa8b174825bd56
-  languageName: node
-  linkType: hard
-
-"gifted-charts-core@npm:0.1.58":
-  version: 0.1.58
-  resolution: "gifted-charts-core@npm:0.1.58"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: e097093c5a9bae59907a8e7eca99dca3ea93d5d421acea9e203e6411ed535d928b18991120b3fe3cee74ef283e307d9026ae0cf29863494451b046f90fd3f8f4
   languageName: node
   linkType: hard
 
@@ -8295,26 +8260,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-gifted-charts@npm:^1.4.56":
-  version: 1.4.56
-  resolution: "react-native-gifted-charts@npm:1.4.56"
-  dependencies:
-    gifted-charts-core: 0.1.58
-  peerDependencies:
-    expo-linear-gradient: "*"
-    react: "*"
-    react-native: "*"
-    react-native-linear-gradient: "*"
-    react-native-svg: "*"
-  peerDependenciesMeta:
-    expo-linear-gradient:
-      optional: true
-    react-native-linear-gradient:
-      optional: true
-  checksum: 2f11fbc5c7d0b18c53a4bfde923e9b61342357ca9bcecb3fccfa71fa7867f8d6276981ed3553cce632f6e0c36334a4030447d3e180a8241a76dc7353efd3d6a3
-  languageName: node
-  linkType: hard
-
 "react-native-helmet-async@npm:2.0.4":
   version: 2.0.4
   resolution: "react-native-helmet-async@npm:2.0.4"
@@ -8338,19 +8283,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-paper@npm:^5.13.1":
-  version: 5.13.1
-  resolution: "react-native-paper@npm:5.13.1"
+"react-native-pie-chart@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "react-native-pie-chart@npm:4.0.0"
   dependencies:
-    "@callstack/react-theme-provider": ^3.0.9
-    color: ^3.1.2
-    use-latest-callback: ^0.1.5
+    d3-shape: 3.2.0
   peerDependencies:
-    react: "*"
-    react-native: "*"
-    react-native-safe-area-context: "*"
-    react-native-vector-icons: "*"
-  checksum: ef16fbb57986f09f2080e98ddb7977c494d6accb36767101de32199849bba8764e2bcd528a5d1c08940f4430cb86dabb6baaf5b33a539670221cbbfcc01f2d5e
+    react: ">=18.2.0"
+    react-native: ">=0.73.0"
+    react-native-svg: ">=15.8.0"
+  checksum: 717550bc41862d48c95d57cd08abb8aef738c1c2f615b60237b52e7ee799a6c2c937e6e15a21b9554c8aa3cc1741a2b8c55dc3fdb92774667ce4bf5de8a6e860
   languageName: node
   linkType: hard
 
@@ -9962,12 +9904,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-latest-callback@npm:^0.1.5":
-  version: 0.1.11
-  resolution: "use-latest-callback@npm:0.1.11"
+"use-count-up@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "use-count-up@npm:3.0.1"
+  dependencies:
+    use-elapsed-time: 3.0.2
   peerDependencies:
-    react: ">=16.8"
-  checksum: cc6df404a4ed3a39d0eb014a815c2e568a6abbe8c5ff09f9205a08bf68e86201826ed633865a6056ca0fd9581e0e7e70f18ca26c592a9eaccea5d244cf283b1f
+    react: ">=16.8.0"
+  checksum: 0e5b659acd52bdf401d943605d19c425bc7acdce5f4486b3bd6dfd6b70dadcb68f279df09140976b3038d6de34f3eb5fe47136af04e3789861dfecd943906ea3
+  languageName: node
+  linkType: hard
+
+"use-elapsed-time@npm:3.0.2":
+  version: 3.0.2
+  resolution: "use-elapsed-time@npm:3.0.2"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 9ba8ef6d05b8137fd715ace7303edc2fdc412f372f158bfa659926b0cb356654be84664f912d016f99deb2f3951236443feb84b78318755d5984c340dcb418a6
   languageName: node
   linkType: hard
 

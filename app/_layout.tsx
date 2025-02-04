@@ -1,37 +1,33 @@
 import RootNavigation from "@/components/RootNavigation";
+import Splash from "@/components/SplashScreen";
 import ThemeProvider from "@/context/ThemeContext";
-import { DarkTheme, DefaultTheme } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
-import * as SplashScreen from "expo-splash-screen";
-import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
-import { PaperProvider } from "react-native-paper";
+import { useLayoutEffect, useState } from "react";
 import "react-native-reanimated";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [loaded] = useFonts({
+  const [fontLoaded, fontError] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
   });
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
+  const [appReady, setAppReady] = useState(false);
+  const [splashAnimationFinished, setSplashAnimationFinished] = useState(false);
 
-  if (!loaded) {
-    return null;
+  useLayoutEffect(() => {
+    if (fontLoaded || fontError) {
+      setAppReady(true);
+    }
+  }, [fontLoaded, fontError]);
+
+  if (!appReady || !splashAnimationFinished) {
+    return <Splash callback={() => setSplashAnimationFinished(true)} />;
   }
 
   return (
     <ThemeProvider>
-      <PaperProvider>
-        <RootNavigation />
-      </PaperProvider>
+      <RootNavigation />
     </ThemeProvider>
   );
 }

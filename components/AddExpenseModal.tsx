@@ -26,14 +26,14 @@ const AddExpenseModal = ({
   const insets = useSafeAreaInsets();
   const theme = useTheme();
   const [amount, setAmount] = useState("");
-  const [category, setCategory] = useState<ExpenseCategory>("Food");
+  const [category, setCategory] = useState<ExpenseCategory["name"]>("Food");
   const [name, setName] = useState("");
 
   const { categories, addExpense } = useStore((state) => state);
   const formattedCategories = categories.map((category, index) => {
     return {
       key: index,
-      value: category,
+      value: category.name,
     };
   });
 
@@ -45,7 +45,7 @@ const AddExpenseModal = ({
       amount: parseFloat(amount),
       category,
       name: name,
-      date: new Date(),
+      date: new Date().toLocaleDateString(),
     });
 
     // Reset form
@@ -102,7 +102,7 @@ const AddExpenseModal = ({
             <Text>Category:</Text>
             <View>
               <SelectList
-                setSelected={(val: ExpenseCategory) => setCategory(val)}
+                setSelected={(val: ExpenseCategory["name"]) => setCategory(val)}
                 data={formattedCategories}
                 save="value"
                 dropdownStyles={styles.dropDownStyles}

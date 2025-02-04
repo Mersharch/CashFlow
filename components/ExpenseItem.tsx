@@ -1,4 +1,5 @@
-import { Expense } from "@/state/store";
+import { useTheme } from "@/context/ThemeContext";
+import useStore, { Expense, ExpenseCategory } from "@/state/store";
 import { getScreenPercent } from "@/utils/responsiveness";
 import { Ionicons } from "@expo/vector-icons";
 import { memo } from "react";
@@ -9,36 +10,47 @@ interface ExpenseItemProps {
   theme: any;
 }
 
-const ExpenseItem = memo(({ item, theme }: ExpenseItemProps) => (
-  <View style={styles.itemContainer}>
-    <View style={styles.itemLeft}>
-      <View
-        style={[
-          styles.itemIconContainer,
-          { backgroundColor: theme.background },
-        ]}
-      >
-        <Ionicons name="shirt" size={getScreenPercent(24)} color={theme.tint} />
+const ExpenseItem = memo(({ item, theme }: ExpenseItemProps) => {
+  const { categories } = useStore((state) => state);
+
+  const category: ExpenseCategory | undefined = categories.find(
+    (c) => c.name?.toLocaleLowerCase() === item.category.toLocaleLowerCase()
+  );
+  return (
+    <View style={styles.itemContainer}>
+      <View style={styles.itemLeft}>
+        <View
+          style={[
+            styles.itemIconContainer,
+            { backgroundColor: theme.background },
+          ]}
+        >
+          <Ionicons
+            name={category?.icon}
+            size={getScreenPercent(24)}
+            color={category?.color}
+          />
+        </View>
+        <View style={styles.itemText}>
+          <Text style={[styles.itemTitle, { color: theme.text }]}>
+            {item.name}
+          </Text>
+          <Text style={[styles.itemSubtitle, { color: theme.tabIconDefault }]}>
+            {category?.name}
+          </Text>
+        </View>
       </View>
-      <View style={styles.itemText}>
+      <View style={[styles.itemText, { alignItems: "flex-end" }]}>
         <Text style={[styles.itemTitle, { color: theme.text }]}>
-          {item.name}
+          ${item.amount.toLocaleString()}
         </Text>
         <Text style={[styles.itemSubtitle, { color: theme.tabIconDefault }]}>
-          {item.category}
+          {item.date}
         </Text>
       </View>
     </View>
-    <View style={styles.itemText}>
-      <Text style={[styles.itemTitle, { color: theme.text }]}>
-        - ${item.amount.toLocaleString()}
-      </Text>
-      <Text style={[styles.itemSubtitle, { color: theme.tabIconDefault }]}>
-        {item.date.toLocaleString()}
-      </Text>
-    </View>
-  </View>
-));
+  );
+});
 
 const styles = StyleSheet.create({
   itemContainer: {

@@ -1,50 +1,99 @@
-# Welcome to your Expo app 👋
+```markdown
+# CashFlow
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Getting Started
 
-## Get started
+### Prerequisites
 
-1. Install dependencies
+Before you begin, ensure you have the following installed:
+
+- Git
+- Node.js
+- npm or yarn
+- A code editor (e.g., Visual Studio Code, Sublime Text, WebStorm)
+- Expo Go app (for physical devices)
+- Android Studio (for Android emulator)
+- Xcode (for iOS simulator, macOS only)
+
+### Installation
+
+1. **Clone the repository**
 
    ```bash
+   git clone https://github.com/Mersharch/CashFlow
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   # Using npm
    npm install
+
+   # Using yarn
+   yarn install
    ```
 
-2. Start the app
+3. **Generate iOS and Android folders**
 
    ```bash
-    npx expo start
+   npx expo prebuild
    ```
 
-In the output, you'll find options to open the app in a
+   **Note for macOS users:**  
+   After running `npx expo prebuild`, change the directory to the `ios` folder and run `pod install` to complete the necessary configurations.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   ```bash
+   cd ios
+   pod install
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+4. **Open the project**
 
-## Get a fresh project
+   - Launch your preferred code editor
+   - Open the CashFlow project folder
 
-When you're ready, run:
+5. **Start the application**
 
-```bash
-npm run reset-project
+   ```bash
+   # Using npm
+   npm start
+
+   # Using yarn
+   yarn start
+
+   # Using Expo directly
+   npx expo start
+   ```
+
+### Running the app
+
+- **Physical Device:**
+  - Scan the QR code with your device's camera
+  - Open the link with Expo Go app
+
+- **Android Emulator:**
+  - Press `a` in the terminal to run on Android emulator
+
+- **iOS Simulator:**
+  - Press `i` in the terminal to run on iOS simulator
+
+## Initial Setup
+
+- When the app launches, you'll see the welcome screen
+- Enter your name in the input field
+- Click the button to proceed
+
+## Adding Expenses
+
+- On the home screen, locate the floating action button (FAB) at the bottom right
+- Click the FAB to add a new expense
+
+## Theme Toggle
+
+- Look for the theme toggle icon in the top right corner of the header
+- Click the icon to switch between light and dark modes
+
+## Insights Page
+
+- Click on the **Insights** tab to view data visualization concerning your expenses.
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.

@@ -10,6 +10,7 @@ const TabLayout = () => {
   const handleToggleMode = () => {
     return theme.setMode(theme.mode === "light" ? "dark" : "light");
   };
+
   return (
     <Tabs
       screenOptions={{
@@ -25,17 +26,9 @@ const TabLayout = () => {
               style={{
                 display: "flex",
                 flexDirection: "row",
-                gap: 10,
                 alignItems: "center",
               }}
             >
-              <TouchableOpacity>
-                <Ionicons
-                  name="notifications-circle"
-                  size={getScreenPercent(24)}
-                  color={theme.tint}
-                />
-              </TouchableOpacity>
               <TouchableOpacity onPress={handleToggleMode}>
                 <Ionicons
                   name="invert-mode"

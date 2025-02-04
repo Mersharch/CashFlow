@@ -39,7 +39,7 @@ export const ThemeContext = createContext<ThemeContextProps>({
 });
 
 const ThemeProvider: FC<Props> = ({ children }) => {
-  const [mode, setMode] = useState<Mode>(useColorScheme() ?? "light");
+  const [mode, setMode] = useState<Mode>("light");
 
   const contextValues = {
     ...(mode === "light" ? Colors.light : Colors.dark),
