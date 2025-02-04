@@ -96,4 +96,14 @@ Before you begin, ensure you have the following installed:
 ## Insights Page
 
 - Click on the **Insights** tab to view data visualization concerning your expenses.
+
+
+
+![]("./assets/images/IMG_1181.PNG)
+![]("./assets/images/IMG_1182.PNG)
+![]("./assets/images/IMG_1183.PNG)
+![]("./assets/images/IMG_1184.PNG)
+![]("./assets/images/IMG_1185.PNG)
+![]("./assets/images/IMG_1186.PNG)
+![]("./assets/images/IMG_1187.PNG)
 ```

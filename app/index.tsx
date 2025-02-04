@@ -1,9 +1,20 @@
 import { useTheme } from "@/context/ThemeContext";
 import useStore from "@/state/store";
-import { getScreenPercent } from "@/utils/responsiveness";
+import {
+  getScreenHeight,
+  getScreenPercent,
+  getScreenWidth,
+} from "@/utils/responsiveness";
 import { Redirect } from "expo-router";
 import { useState } from "react";
-import { TextInput, TouchableOpacity, View, Text, Alert } from "react-native";
+import {
+  TextInput,
+  TouchableOpacity,
+  View,
+  Text,
+  Alert,
+  Image,
+} from "react-native";
 
 const Index = () => {
   const { user, setUser } = useStore((state) => state);
@@ -15,18 +26,28 @@ const Index = () => {
       <View
         style={{
           flex: 1,
-          backgroundColor: theme.background,
+          backgroundColor: "white",
           alignItems: "center",
           justifyContent: "center",
           gap: 10,
         }}
       >
+        <Image
+          source={require("../assets/images/10808.jpg")}
+          resizeMode="center"
+          style={{
+            width: getScreenWidth(300),
+            height: getScreenHeight(150),
+          }}
+          alt="Welcome Image"
+        />
         <TextInput
           style={{
-            backgroundColor: theme.altBackground,
-            padding: 10,
+            backgroundColor: theme.background,
+            paddingHorizontal: 10,
+            paddingVertical: getScreenPercent(20),
             borderRadius: 5,
-            minWidth: getScreenPercent(200),
+            minWidth: getScreenPercent(300),
             color: theme.tabIconDefault,
           }}
           placeholder="Enter your name"
